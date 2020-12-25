@@ -7,10 +7,7 @@ import (
 	"os"
 )
 
-const (
-	//air  = "."
-	tree = "#"
-)
+const tree = "#"
 
 type Slope struct {
 	Cursor map[string]int
@@ -82,11 +79,6 @@ func NewSlope(right int, down int) *Slope {
 func (s *Slope) Do(ln *string) {
 	s.Cursor["y"]++
 
-	// if (s.Down == 2 && s.Cursor["y"]%2 == 0) || s.Down == 1 {
-	// 	if string((*ln)[s.Cursor["x"]]) == string(tree) {
-	// 		s.Trees++
-	// 	}
-	// }
 	if string((*ln)[s.Cursor["x"]]) == string(tree) {
 		s.Trees++
 	}
