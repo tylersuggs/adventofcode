@@ -85,7 +85,7 @@ func validatePassport(fields []string) bool {
 }
 
 func validateFields(fields []string) bool {
-	var results = make(map[string]bool)
+	// var results = make(map[string]bool)
 
 	fmt.Printf("--\n%v\n", fields)
 	for _, field := range fields {
@@ -95,7 +95,7 @@ func validateFields(fields []string) bool {
 
 		res := validateField(field)
 
-		results[field] = res
+		// results[field] = res
 
 		if !res {
 			fmt.Printf("%v - %v\n", field, res)
