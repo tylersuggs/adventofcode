@@ -47,8 +47,44 @@ for patternLen := 1; patternLen <= n/2; patternLen++ {
 
 2. **Pattern length iteration**: Must check all divisors of the string length, not just even lengths.
 
+## Example Analysis
+
+Given range: `10-130`
+
+### Part 1 Invalid IDs
+- 11 = "1" repeated 2x ✓
+- 22 = "2" repeated 2x ✓
+- 33 = "3" repeated 2x ✓
+- ...
+- 99 = "9" repeated 2x ✓
+- 1212 = "12" repeated 2x ✓
+- 1313 = "13" repeated 2x ✓
+
+Sum: 11+22+33+44+55+66+77+88+99+1212+1313 = 1728
+
+### Part 2 Additional Invalid IDs
+- 111 = "1" repeated 3x ✓
+- All from Part 1 ✓
+
+## Input Format
+
+The input is a comma-separated list of ranges:
+```
+10327-17387,74025-113072,79725385-79874177,...
+```
+
+Total numbers to check: Millions across ~30 ranges
+
+## Complexity
+
+- **Time**: O(n × m) where n is total numbers in ranges, m is average number length
+- **Space**: O(1) per number checked
+- Optimization: Only check numbers with 2+ digits
+
 ## Key Insights
 
 - String pattern matching can be done efficiently with `strings.Repeat()`
 - Part 2's answer is larger because it includes all Part 1 results plus additional patterns
 - The difference (13548283911) represents IDs with 3+ repetitions
+- Most numbers are valid - invalid IDs are relatively rare
+- Pattern length must divide total length evenly

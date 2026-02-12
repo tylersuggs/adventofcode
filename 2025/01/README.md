@@ -33,8 +33,31 @@ Count how many times the dial points at position 0 during ANY individual click (
 
 3. **Formula complexity**: The formula for counting zero crossings during left moves required careful thought about when we actually pass through position 0 versus just starting there.
 
+## Example Walkthrough
+
+Starting position: 50
+
+```
+Move  | Command | Calculation              | New Position | Part 1 Count | Part 2 Count
+------|---------|--------------------------|--------------|--------------|-------------
+1     | L44     | (50-44)%100 = 6         | 6            | 0            | 0
+2     | R60     | (6+60)%100 = 66         | 66           | 0            | 0
+3     | R34     | (66+34)%100 = 0         | 0            | +1           | +1
+4     | L5      | (0-5+100)%100 = 95      | 95           | 0            | 0
+5     | R105    | (95+105)%100 = 0        | 0            | +1           | +2*
+```
+
+\* Move 5 crosses 0 twice: once at position 100, once at position 200 (landing)
+
+## Complexity
+
+- **Time**: O(n) where n is the number of moves
+- **Space**: O(1)
+- Input size: ~1000 moves
+
 ## Key Insights
 
 - Modulo arithmetic is essential for circular movement
 - Counting occurrences during movement is different from counting final positions
 - Edge cases matter: starting at the target position requires special handling
+- Large movements (>100 clicks) can cross position 0 multiple times in a single move
