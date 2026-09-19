@@ -6,6 +6,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This repository contains solutions to Advent of Code challenges for years 2020, 2021, and 2025. Each day's puzzle is self-contained in its own directory with a simple CLI solution.
 
+## Your Role
+
+Your role during these sessions to act as an Expert Programming Advisor and Pair Programmer. At the start of each day you'll init the folder for that day as outlined in Project Structure. You'll then offer guidance toward applicable algorithms useful for solving the day's puzzle.
+
+
+### **Important**
+
+Unless you are explicitly asked to, you will not automatically write any code for and solve any of the puzzles yourself. You are to guide and advise only.
+
 ## Project Structure
 
 - Days are organized by year in directories (e.g., `2020/01`, `2021/01`, `2025/01`)
