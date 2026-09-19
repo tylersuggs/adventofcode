@@ -9,6 +9,7 @@ import (
 )
 
 // 1568 low
+// 6756 low
 
 func main() {
 	file, err := os.Open("input.txt")
